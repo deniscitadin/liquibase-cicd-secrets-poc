@@ -1,0 +1,19 @@
+name: Liquibase-CICD-Docker
+
+on: [push]
+
+jobs:
+  LBJobDockerCLI:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: liquibase/liquibase-github-action@v7
+      with:
+        operation: 'update'
+        changeLogFile: 'changelog.sql'
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        url: ${{ secrets.URL }}
+        proLicenseKey: ${{ secrets.LICENSE }}
+
+        
+        
