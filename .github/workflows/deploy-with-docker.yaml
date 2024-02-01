@@ -9,7 +9,7 @@ jobs:
     - uses: liquibase/liquibase-github-action@v7
       with:
         operation: 'update'
-        classpath: 'example/changelogs'
+        classpath: ''
         changeLogFile: 'changelog.sql'
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
